@@ -1,3 +1,12 @@
+#技术清单
++ SpringBoot 2.17
++ Mybaris-plus 3.2
++ thymeleaf
+#功能列表
++ 登录
++ 注册
++ 文件上传
++ ...
 
 #臭傻逼的踩坑日记😊
 
@@ -32,3 +41,5 @@ spring:
   thymeleaf:
     cache: false
 ```
+还需要使用``Ctrl+F9``构建项目
+

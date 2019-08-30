@@ -1,9 +1,9 @@
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://172.18.10.137:3306/txspsh_sys_dev?characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:13520/redbean?characterEncoding=utf8&allowMultiQueries=true&useSSL=false&serverTimezone=GMT%2B8
     username: root
-    password: aroot
+    password: crtxr
     hikari:
       max-lifetime: 30000
       maximum-pool-size: 20
@@ -14,7 +14,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 #mybaits-plus配置，修改主键类型，mapper.xml、type 别名等
 mybatis-plus:
-  mapper-locations: classpath*:com/crtxr/note/mapper/xml/*Mapper.xml
+  mapper-locations: classpath*:com/crtxr/note/mapper/xml/*.xml
   typeAliasesPackage: com.crtxr.note.entity
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
@@ -30,6 +30,8 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
+  thymeleaf:
+    cache: false
 
 logging:
   level:

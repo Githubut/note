@@ -2,4 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.crtxr.note.mapper.AccountMapper">
 
+
+    <select id="pageList" resultType="com.crtxr.note.entity.Account" parameterType="java.util.Map">
+        select * from account where account_id != #{pm.id}
+    </select>
 </mapper>

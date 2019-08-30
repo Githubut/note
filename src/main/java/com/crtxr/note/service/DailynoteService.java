@@ -1,6 +1,6 @@
 package com.crtxr.note.service;
 
-import com.crtxr.note.entity.Account;
+import com.crtxr.note.entity.Dailynote;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author crtxr
  * @since 2019-08-30
  */
-public interface IAccountService extends IService<Account> {
+public interface DailynoteService extends IService<Dailynote> {
 
 }

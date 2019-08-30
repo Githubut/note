@@ -1,9 +1,9 @@
 package com.crtxr.note.service.impl;
 
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.crtxr.note.entity.Dailynote;
 import com.crtxr.note.mapper.DailynoteMapper;
-import com.crtxr.note.service.IDailynoteService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.crtxr.note.service.DailynoteService;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-08-30
  */
 @Service
-public class DailynoteServiceImpl extends ServiceImpl<DailynoteMapper, Dailynote> implements IDailynoteService {
+public class DailynoteServiceImpl extends ServiceImpl<DailynoteMapper, Dailynote> implements DailynoteService {
 
 }

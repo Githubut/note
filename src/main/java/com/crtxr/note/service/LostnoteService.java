@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author crtxr
  * @since 2019-08-30
  */
-public interface ILostnoteService extends IService<Lostnote> {
+public interface LostnoteService extends IService<Lostnote> {
 
 }

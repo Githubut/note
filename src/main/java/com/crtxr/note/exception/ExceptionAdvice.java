@@ -15,6 +15,7 @@ public class ExceptionAdvice {
     @ResponseBody
     public Mono<String> handleIndexOutOfBoundsException(Exception e) {
         e.printStackTrace();
+
         return Mono.just(System.err.toString());
     }
 

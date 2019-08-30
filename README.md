@@ -1,7 +1,7 @@
 #技术清单
 + SpringBoot 2.17
 + Mybaris-plus 3.2
-+ thymeleaf
++ thymeleaf 2.17
 #功能列表
 + 登录
 + 注册

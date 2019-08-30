@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" href="css/bg/normalize.css">
+    <link rel="stylesheet" href="css/bg/htmleaf-demo.css">
+    <link rel="stylesheet" href="css/bg/style.css">
+    <link rel="stylesheet" href="css/login-form.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css'" type="text/css"/>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+
+</body>
+</html>
+
+
+<div class="container">
+
+    <div id="login">
+
+        <form method="post" action="/login">
+
+            <fieldset class="clearfix">
+
+                <p><span class="fontawesome-user"></span><input type="text" placeholder="用户名" name="username"
+                                                                value="crt"
+                                                                required></p>
+                <!-- JS because of IE support; better: placeholder="Username" -->
+                <p><span id="" class="fontawesome-lock"></span><input type="password" placeholder="密码"
+                                                                      name="password"
+                                                                      value=""
+                                                                      required></p>
+                <!-- JS because of IE support; better: placeholder="Password" -->
+                <p><input type="submit" value="登录"><input type="button" onclick="window.open('/register.html','_blank');"
+                                                          value="注册"></p>
+
+            </fieldset>
+
+        </form>
+
+    </div> <!-- end login -->
+
+</div>
+
+<script src="bg/js/bubbly-bg.js"></script>
+<script>
+    function getRandomColor() {
+        return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6);
+    }
+
+    let configs = [
+        {
+            colorStart: getRandomColor(),
+            colorStop: getRandomColor(),
+            blur: 1,
+            compose: "source-over",
+            bubbleFunc: () => `hsla(${Math.random() * 100}, 100%, 60%, .2)`
+        }
+    ];
+    bubbly(configs[0]);
+</script>

@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>注册</title>
+    <link rel="stylesheet" media="screen" href="register/css/css.css"/>
+    <link rel="stylesheet" media="screen" href="css/crtxr-c.css"/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="radio/css/htmleaf-demo.css">
+    <link rel="stylesheet" type="text/css" href="radio/css//build.css">
+</head>
+<body>
+
+<form id="form-tt" action="/register_user" method="post">
+
+    <!-- fieldsets -->
+
+    <fieldset>
+        <h2 class="fs-title">Create your account</h2>
+        <h3 class="fs-subtitle">step 1</h3>
+        <input type="text" name="email" class="input" placeholder="Email"/>
+        <input type="password" name="pass" class="input" placeholder="Password"/>
+        <input type="password" name="cpass" class="input" placeholder="Confirm Password"/>
+        <div class="radio radio-info radio-inline" style="margin-bottom: 10px">
+            <input type="radio" id="inlineRadio1" value="option1" name="radioInline" checked>
+            <label for="inlineRadio1">ssssss</label>
+            <input type="radio" id="inlineRadio2" value="option2"
+                   name="radioInline">
+            <label for="inlineRadio2">wwwww</label>
+        </div>
+        <input type="button" name="next" class="next action-button input" value="Next"/>
+    </fieldset>
+<!--    {#    <fieldset>#}-->
+<!--    {#        <h2 class="fs-title">Social Profiles</h2>#}-->
+<!--    {#        <h3 class="fs-subtitle">Your presence on the social network</h3>#}-->
+<!--    {#        <input type="text" name="twitter" placeholder="Twitter"/>#}-->
+<!--    {#        <input type="text" name="facebook" placeholder="Facebook"/>#}-->
+<!--    {#        <input type="text" name="gplus" placeholder="Google Plus"/>#}-->
+<!--    {#        <input type="button" name="previous" class="previous action-button" value="Previous"/>#}-->
+<!--    {#        <input type="button" name="next" class="next action-button" value="Next"/>#}-->
+<!--    {#    </fieldset>#}-->
+    <fieldset>
+        <h2 class="fs-title">Personal Details</h2>
+        <h3 class="fs-subtitle">We will never sell it</h3>
+        <input type="text" name="fname" class="input" placeholder="First Name"/>
+        <input type="text" name="lname" class="input" placeholder="Last Name"/>
+        <input type="text" name="phone" class="input" placeholder="Phone"/>
+        <textarea name="address" placeholder="Address"></textarea>
+        <input type="button" name="previous" class="previous action-button input" value="Previous"/>
+        <input type="submit" name="submit" class="submit action-button input" value="Submit"/>
+    </fieldset>
+</form>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="register/js/jquery.easing.min.js"></script>
+<script src="register/js/jQuery.time.js"></script>
+<script src="bg/js/bubbly-bg.js"></script>
+<script>
+    function getRandomColor() {
+        return '#' + ('00000' + (Math.random() * 0x1000000 << 0).toString(16)).substr(-6);
+    }
+
+    let configs = [
+        {
+            colorStart: getRandomColor(),
+            colorStop: getRandomColor(),
+            blur: 1,
+            compose: "source-over",
+            bubbleFunc: () => `hsla(${Math.random() * 100}, 100%, 60%, .18)`
+        }
+    ];
+    bubbly(configs[0]);
+</script>
+</body>
+</html>

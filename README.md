@@ -2,6 +2,7 @@
 + SpringBoot 2.17
 + Mybaris-plus 3.2
 + thymeleaf 2.17
+
 #功能列表
 + 登录
 + 注册
@@ -12,7 +13,8 @@
 
 ###mybatis-plus升级3.x后
 
-- select * from account where account_id != #{pm.id}\
+- 参数为`Map pm`时 \
+ select * from account where account_id != #{pm.id}\
  2.x分页 page是RowBounds的子类，可以不要写@param, 现在IPage 是需要@param, 现在需要@param("map") Map
 以前可以直接 #{id} 现在需要 #{map.id}
 

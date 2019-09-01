@@ -61,5 +61,10 @@ public class Account implements Serializable {
     @TableField("account_status")
     private Integer accountStatus;
 
+    /**
+     * 账号或手机号
+     */
+    @TableField(exist = false)
+    private Integer accountNumber;
 
 }

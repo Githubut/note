@@ -4,6 +4,6 @@
 
 
     <select id="pageList" resultType="com.crtxr.note.entity.Account" parameterType="java.util.Map">
-        select * from account where account_id != #{pm.id}
+        select * from account where account_id != #{mp.id}
     </select>
 </mapper>

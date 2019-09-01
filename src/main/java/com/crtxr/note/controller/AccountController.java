@@ -1,17 +1,23 @@
 package com.crtxr.note.controller;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.crtxr.note.entity.Account;
 import com.crtxr.note.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.management.Query;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * <p>
@@ -34,16 +40,34 @@ public class AccountController {
     }
 
 
-    @RequestMapping("page")
+    @RequestMapping("/page")
     @ResponseBody
     public Object page() {
         Page<Account> page = new Page<>(1, 15);
         Map<String, Object> pm = new HashMap<>(8);
         pm.put("id", 2);
         page = accountServicee.pageList(page, pm);
-//        IPage<Account> iPage = accountServicee.page(page);
         return page;
     }
 
+    @PostMapping("/add")
+    public String add(@RequestBody Account account) {
+        return "login";
+    }
+
+
+    @PostMapping("/login")
+    @ResponseBody
+    public String login(@RequestBody Account account) {
+        LambdaQueryWrapper<Account> wrapper = new LambdaQueryWrapper<>();
+        wrapper.eq(Account::getAccountNumber, account.getAccountNumber());
+        wrapper.or();
+        wrapper.eq(Account::getAccountPassword, account.getAccountPassword());
+        Account user = accountServicee.getOne(wrapper);
+        if (Objects.nonNull(user)) {
+            return "ok";
+        }
+        throw new RuntimeException("用户名密码错误");
+    }
 
 }

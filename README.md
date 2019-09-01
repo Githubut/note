@@ -1,4 +1,4 @@
-演示地址：http://txr.tpddns.cn (有可能没运行)
+演示地址：http://txr.tpddns.cn/login.html (有可能没运行)
 #技术清单
 + SpringBoot 2.17
 + Mybaris-plus 3.2

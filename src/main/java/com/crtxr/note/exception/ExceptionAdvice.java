@@ -13,10 +13,9 @@ public class ExceptionAdvice {
 
     @ExceptionHandler({Exception.class})
     @ResponseBody
-    public Mono<String> handleIndexOutOfBoundsException(Exception e) {
+    public Mono<String> handleBoundsException(Exception e) {
         e.printStackTrace();
-
-        return Mono.just(System.err.toString());
+        return Mono.just(e.getMessage());
     }
 
 }

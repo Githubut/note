@@ -1,3 +1,4 @@
+
 spring:
   thymeleaf:
     cache: false
@@ -38,7 +39,8 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: true
 
-
 logging:
   level:
     com.crtxr.note: DEBUG
+server:
+  port: 8888

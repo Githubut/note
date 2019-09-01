@@ -19,6 +19,6 @@ public class IndexController {
      */
     @GetMapping("/")
     public String toLogin() {
-        return "redirect:login.html";
+        return "redirect:register.html";
     }
 }

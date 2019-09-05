@@ -2,6 +2,7 @@ package com.crtxr.note.entity;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -28,7 +29,7 @@ public class Account implements Serializable {
     /**
      * 主键Id
      */
-    @TableId
+    @TableId(type = IdType.AUTO)
     private Integer accountId;
 
     /**
@@ -67,4 +68,8 @@ public class Account implements Serializable {
     @TableField(exist = false)
     private Integer accountNumber;
 
+    public Account(Integer accountId, String accountName) {
+        this.accountId = accountId;
+        this.accountName = accountName;
+    }
 }

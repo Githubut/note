@@ -50,24 +50,43 @@ public class AccountController {
         return page;
     }
 
-    @PostMapping("/add")
-    public String add(@RequestBody Account account) {
-        return "login";
+    @RequestMapping("/webtest")
+    @ResponseBody
+    public Object webtest() {
+
+        return "webtest";
     }
 
 
+    /**
+     * 用户注册
+     *
+     * @param account
+     * @return
+     */
+    @PostMapping("/add")
+    public String add(@RequestBody Account account) {
+        boolean save = accountServicee.save(account);
+        return "ok";
+    }
+
+    /**
+     * 登录
+     *
+     * @param account
+     * @return
+     */
     @PostMapping("/login")
     @ResponseBody
     public String login(@RequestBody Account account) {
-        LambdaQueryWrapper<Account> wrapper = new LambdaQueryWrapper<>();
-        wrapper.eq(Account::getAccountNumber, account.getAccountNumber());
+        QueryWrapper<Account> wrapper = new QueryWrapper<>();
+        wrapper.eq("Account::getAccountNumber", account.getAccountNumber());
         wrapper.or();
-        wrapper.eq(Account::getAccountPassword, account.getAccountPassword());
+        wrapper.eq("Account::getAccountPassword", account.getAccountPassword());
         Account user = accountServicee.getOne(wrapper);
         if (Objects.nonNull(user)) {
             return "ok";
         }
         throw new RuntimeException("用户名密码错误");
     }
-
 }
